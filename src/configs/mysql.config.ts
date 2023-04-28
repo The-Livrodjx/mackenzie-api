@@ -1,13 +1,12 @@
-import { TypeOrmModuleOptions } from "@nestjs/typeorm";
 import * as dotenv from "dotenv";
 
 dotenv.config();
 
 export const mysqlConfig = {
   type: 'mysql',
-  host: 'localhost',
+  host: 'host.docker.internal',
   username: 'root',
-  password: process.env.DATABASE_PASS,
+  password: '@Python123',
   port: 3306,
   database: 'mackenzieapi',
   synchronize: true

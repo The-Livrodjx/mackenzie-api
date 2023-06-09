@@ -1,6 +1,6 @@
-import { Body, Controller, Post, Get } from '@nestjs/common';
+import { Body, Controller, Post, Get, Param } from '@nestjs/common';
 import { StudentsService } from './students.service';
-import { CreateStudent } from './dto/student.dto';
+import { CreateStudent, RegisterStudentInClass } from './dto/student.dto';
 
 @Controller('students')
 export class StudentsController {
@@ -11,8 +11,13 @@ export class StudentsController {
     return this.studentsService.getAll();
   }
 
+  @Get('/getById/:id')
+  getById(@Param('id') id: number) {
+    return this.studentsService.getPresencesFromStudent(id);
+  }
+
   @Post('create')
-  create(@Body() body: CreateStudent) {
+  create(@Body() body: CreateStudent) { 
     return this.studentsService.create(body);
   }
 }

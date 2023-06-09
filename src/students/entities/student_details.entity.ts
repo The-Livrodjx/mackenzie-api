@@ -1,7 +1,9 @@
+import { ClassEntity } from "src/classes/entities/class.entity";
 import {
   Entity,
   Column,
-  PrimaryGeneratedColumn
+  PrimaryGeneratedColumn,
+  OneToMany
 } from "typeorm";
 
 @Entity()
@@ -19,5 +21,6 @@ export class StudentDetails {
   sala_aluno: string;
 
   @Column()
-  frequencia_aluno: number
+  frequencia_aluno: number;
+
 }

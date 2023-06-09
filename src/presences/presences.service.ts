@@ -23,6 +23,7 @@ export class PresencesService {
       relations: [
         'professor', 
         'student',
+        'student.class',
         'student.student_details'
       ] 
     });
@@ -48,7 +49,7 @@ export class PresencesService {
 
     let student = await this.studentRepository.findOne({where: {
       id: idAluno
-    }, relations: ['student_details']});
+    }, relations: ['student_details', 'class']});
 
     if (idProfessor && professor && idAluno && student) { 
       newPresence.professor = professor;

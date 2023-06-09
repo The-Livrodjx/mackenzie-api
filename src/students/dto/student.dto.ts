@@ -8,6 +8,12 @@ interface CreateStudent {
   frequencia_aluno: number;
 }
 
+interface RegisterStudentInClass {
+  nome_aluno: string;
+
+  course_name: string;  
+}
+
 interface StudentReturn {
   id: number;
   nome_aluno: string;
@@ -22,5 +28,6 @@ interface StudentReturn {
 
 export {
   CreateStudent,
-  StudentReturn
+  StudentReturn,
+  RegisterStudentInClass
 }
